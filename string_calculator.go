@@ -37,6 +37,9 @@ func Add(input string) (int, error) {
 		if number < 0 {
 			return 0, fmt.Errorf("negatives not allowed: %d", number)
 		}
+		if number > 1000 {
+			continue
+		}
 		sum += number
 	}
 	return sum, nil
