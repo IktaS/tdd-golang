@@ -1,6 +1,7 @@
 package tdd_golang
 
 import (
+	"fmt"
 	"strconv"
 	"strings"
 )
@@ -32,6 +33,9 @@ func Add(input string) (int, error) {
 		number, err := strconv.Atoi(v)
 		if err != nil {
 			return 0, nil
+		}
+		if number < 0 {
+			return 0, fmt.Errorf("negatives not allowed: %d", number)
 		}
 		sum += number
 	}

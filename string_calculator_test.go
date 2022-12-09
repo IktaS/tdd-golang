@@ -93,6 +93,13 @@ func TestAdd(t *testing.T) {
 			},
 			want: 8,
 		},
+		{
+			name: "test should return sum = 14 given two number, with delimiter ;, with newline | 3;5",
+			args: args{
+				input: "//;\n-3\n5",
+			},
+			wantErr: true,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
